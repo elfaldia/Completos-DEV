@@ -8,10 +8,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Character
   - Water
   - UI
-  - 
+  - Map
   - 
   - 
   - 
@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Mapa
+    uniqueID: 2503112481
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: jugador
+    uniqueID: 1366475797
+    locked: 0
+  - name: New Layer 3
+    uniqueID: 1610205753
     locked: 0
