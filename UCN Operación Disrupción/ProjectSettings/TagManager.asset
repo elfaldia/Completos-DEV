@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemigo
   layers:
   - Default
   - TransparentFX
@@ -12,8 +13,13 @@ TagManager:
   - Water
   - UI
   - Map
+<<<<<<< HEAD
   - Piso
   - 
+=======
+  - TileMap
+  - Character
+>>>>>>> 903619df7bb667007e011a600cf0132fd8d7d522
   - 
   - 
   - 

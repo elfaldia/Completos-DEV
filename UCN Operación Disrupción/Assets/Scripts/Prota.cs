@@ -7,7 +7,7 @@ public class Prota : MonoBehaviour
 
     // Start is called before the first frame update
     private Rigidbody2D RigidBody2D;
-    public Animator animator;
+    //public Animator animator;
     Vector2 movement;
     public float moveSpeed = 5f;
     void Start()
@@ -19,8 +19,8 @@ public class Prota : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+       // animator.SetFloat("Horizontal", movement.x);
+       // animator.SetFloat("Speed", movement.sqrMagnitude);
 
     }
     private void FixedUpdate()
