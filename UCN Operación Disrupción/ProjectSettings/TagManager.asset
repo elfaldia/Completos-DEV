@@ -3,23 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Enemigo
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Character
+  - 
   - Water
   - UI
-  - Map
-<<<<<<< HEAD
   - Piso
   - 
-=======
-  - TileMap
-  - Character
->>>>>>> 903619df7bb667007e011a600cf0132fd8d7d522
+  - 
   - 
   - 
   - 
@@ -44,15 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Mapa
-    uniqueID: 2503112481
+  - name: Background
+    uniqueID: 271103333
     locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: jugador
-    uniqueID: 1366475797
-    locked: 0
-  - name: New Layer 3
-    uniqueID: 1610205753
     locked: 0
