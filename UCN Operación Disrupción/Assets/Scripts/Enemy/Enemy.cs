@@ -9,9 +9,9 @@ public class Enemy : Fighter
     [SerializeField]
     States state = States.patrol;
     [SerializeField]
-    float searchRange = 1;
+    float searchRange = 10;
     [SerializeField]
-    float stoppingDistance = 0.3f;
+    float stoppingDistance = 3;
 
     Transform player;
     Vector3 target;
@@ -19,19 +19,36 @@ public class Enemy : Fighter
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         InvokeRepeating("SetTarget", 0, 5);
+        InvokeRepeating("SendAttack", 0, 5); 
     }
 
+    void SendAttack()
+    {
+        if(state != States.pursuit)
+        {
+            return;
+        }
+        if(vel.magnitude != 0)
+        {
+            return;
+        }
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Death "))
+        {
+            anim.SetTrigger("SetAttack");
+        }
+    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, searchRange);
         Gizmos.DrawWireSphere(target, 0.2f);
     }
+
     void SetTarget()
     {
         if (state != States.patrol)
             return;
-        target = new Vector2(transform.position.x + Random.Range(-searchRange, searchRange), Random.RandomRange(LimitsY.y, LimitsY.x));
+        target = new Vector2(transform.position.x + Random.Range(-searchRange, searchRange), Random.Range(LimitsY.y, LimitsY.x));
     }
 
     Vector2 vel;
@@ -40,15 +57,17 @@ public class Enemy : Fighter
         if (state == States.pursuit)
         {
             target = player.transform.position;
-            if(Vector3.Distance(target, transform.position) > searchRange * 1.2f)
+            if (Vector3.Distance(target, transform.position) > searchRange * 1.2f)
             {
                 target = transform.position;
                 state = States.patrol;
                 return;
-            } 
-        }else if (state == States.patrol) { 
+            }
+        }
+        else if (state == States.patrol)
+        {
             var ob = Physics2D.CircleCast(transform.position, searchRange, Vector2.up);
-            if(ob.collider != null)
+            if (ob.collider != null)
             {
                 if (ob.collider.CompareTag("Player"))
                 {
@@ -60,11 +79,18 @@ public class Enemy : Fighter
         vel = target - transform.position;
         sr.flipX = vel.x < 0;
         if(vel.magnitude < stoppingDistance)
-        {
             vel = Vector2.zero; 
-        }
         vel.Normalize();
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Death "))
+        {
+            anim.SetBool("isWalking", vel.magnitude != 0);
+        }
+        else
+        {
+            vel = Vector2.zero;
+        }
         rb.velocity = new Vector2(vel.x * horizontalSpeed, vel.y * verticalSpeed);
+
     }
 
 }

@@ -8,12 +8,14 @@ using UnityEngine;
 
 public class Fighter : MonoBehaviour
 {
+    // min -7.57
+    // max -1.42
     protected static Vector2 LimitsY = new Vector2(-1.42f, -7.57f); 
 
     [SerializeField]
     protected float verticalSpeed;
     [SerializeField]
-    protected float horizontalSpeed = 1;
+    protected float horizontalSpeed;
 
     protected Rigidbody2D rb;
     protected SpriteRenderer sr;
