@@ -16,6 +16,8 @@ public class Fighter : MonoBehaviour
     protected float verticalSpeed;
     [SerializeField]
     protected float horizontalSpeed;
+   
+
 
     protected Rigidbody2D rb;
     protected SpriteRenderer sr;
