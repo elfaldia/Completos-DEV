@@ -12,6 +12,8 @@ public class Enemy : Fighter
     float searchRange = 10;
     [SerializeField]
     float stoppingDistance = 3;
+    [SerializeField]
+    float AttackCoolDown = 2;
 
     Transform player;
     Vector3 target;
@@ -19,7 +21,7 @@ public class Enemy : Fighter
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         InvokeRepeating("SetTarget", 0, 5);
-        InvokeRepeating("SendAttack", 0, 5); 
+        InvokeRepeating("SendAttack", 0, AttackCoolDown); 
     }
 
     void SendAttack()
