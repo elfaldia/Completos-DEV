@@ -27,10 +27,12 @@ public class movements : MonoBehaviour
 
     private Animator animator;
 
+    
 
     private void Start(){
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+       
     }
 
     private void Update(){
@@ -85,4 +87,5 @@ public class movements : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(controladorSuelo.position, dimensionesCaja);
     }
+    
 }
