@@ -57,10 +57,10 @@ public class playerMovement : Fighter
         vida-=daño;
         //anim.setTrigger("getPunch");
         BarraVida.vidaActual(vida);
-        if(vida<=0)
+        if(vida==0)
         {
             anim.SetTrigger("Death");
-            Destroy(gameObject,2);
+            Destroy(gameObject,1.8f);
         }
     
     }}
