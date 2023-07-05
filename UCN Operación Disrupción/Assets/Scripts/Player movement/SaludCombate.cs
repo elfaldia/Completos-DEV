@@ -7,6 +7,7 @@ public class SaludCombate : MonoBehaviour
    [SerializeField] private float vida;
    [SerializeField] private float vidaMaxima;
    [SerializeField]private BarraVida BarraVida;
+   [SerializeField]private movements player;
     void Start()
     {
         vida=vidaMaxima;
@@ -24,7 +25,10 @@ public class SaludCombate : MonoBehaviour
         BarraVida.vidaActual(vida);
         if(vida<=0)
         {
+            //player.GetComponent<Animator>().SetTrigger("Death");
             Destroy(gameObject);
         }
+    
     }
+    
 }

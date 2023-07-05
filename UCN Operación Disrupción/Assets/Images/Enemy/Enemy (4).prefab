@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6783536339747015674}
   m_Layer: 0
   m_Name: Enemy (4)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +107,7 @@ MonoBehaviour:
   searchRange: 10
   stoppingDistance: 3
   AttackCoolDown: 2
+  vida: 100
 --- !u!50 &6783536339747015673
 Rigidbody2D:
   serializedVersion: 4

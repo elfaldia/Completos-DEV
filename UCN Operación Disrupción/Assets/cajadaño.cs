@@ -19,7 +19,7 @@ public class cajadaño : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<SaludCombate>().TomarDaño(20);
+            other.gameObject.GetComponent<playerMovement>().TomarDaño(20);
         }
     }
 }

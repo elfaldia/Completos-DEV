@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class hitboxSubjefe : MonoBehaviour
+public class hitboxplayer : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,9 +17,13 @@ public class hitboxSubjefe : MonoBehaviour
     }
      private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Subjefe"))
         {
-            other.gameObject.GetComponent<playerMovement>().TomarDaño(20);
+            other.gameObject.GetComponent<subjefe>().TomarDaño(20);
+        }
+       else if(other.gameObject.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<Enemy>().TomarDaño(20);
         }
     }
 }

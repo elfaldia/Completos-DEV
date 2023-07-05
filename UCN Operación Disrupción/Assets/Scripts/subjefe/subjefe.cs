@@ -14,7 +14,7 @@ public class subjefe : Fighter
     float stoppingDistance = 3;
     [SerializeField]
     float AttackCoolDown = 2;
-
+    [SerializeField] private float vida;
     Transform player;
     Vector3 target;
 
@@ -80,9 +80,9 @@ public class subjefe : Fighter
             }
         }
         vel = target - transform.position;
-        sr.flipX = vel.x < 0;
+        sr.flipX = -vel.x < 0;
         if(vel.magnitude < stoppingDistance)
-            vel = Vector2.zero; 
+            vel =-Vector2.zero; 
         vel.Normalize();
         if (!anim.GetCurrentAnimatorStateInfo(0).IsName("golpe") && !anim.GetCurrentAnimatorStateInfo(0).IsName("muerte"))
         {
@@ -95,5 +95,14 @@ public class subjefe : Fighter
        rb.velocity = new Vector2(vel.x * horizontalSpeed, vel.y * verticalSpeed);
 
     }
-
+     public void TomarDaño(float daño)
+    {
+        vida-=daño;
+        if(vida<=0)
+        {
+            anim.SetTrigger("isMuerto");
+            GetComponent<CapsuleCollider2D>().enabled=false;
+            Destroy(gameObject,5);
+        }
+    }
 }

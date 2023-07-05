@@ -14,6 +14,8 @@ public class Enemy : Fighter
     float stoppingDistance = 3;
     [SerializeField]
     float AttackCoolDown = 2;
+    [SerializeField] private float vida;
+
 
     Transform player;
     Vector3 target;
@@ -93,6 +95,17 @@ public class Enemy : Fighter
         }
         rb.velocity = new Vector2(vel.x * horizontalSpeed, vel.y * verticalSpeed);
 
+    }
+     public void TomarDaño(float daño)
+    {
+        vida-=daño;
+        if(vida<=0)
+        {
+            anim.SetTrigger("Death");
+            Destroy(gameObject,1.3f);
+          
+            //
+        }
     }
 
 }

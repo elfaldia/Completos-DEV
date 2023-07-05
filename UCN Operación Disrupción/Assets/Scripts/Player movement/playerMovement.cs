@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class playerMovement : Fighter
 {
+    [SerializeField] private float vida;
+   [SerializeField] private float vidaMaxima;
+   [SerializeField]private BarraVida BarraVida;
 
     Vector2 cntrl;
+    void Start()
+    {
+      vida=vidaMaxima;
+        BarraVida.inicioBarra(vida);
+    }
 
     void Update()
     {
@@ -42,4 +50,18 @@ public class playerMovement : Fighter
 
 
     }
+     public void TomarDaño(float daño)
+    {
+        if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Defense")){
+      
+        vida-=daño;
+        //anim.setTrigger("getPunch");
+        BarraVida.vidaActual(vida);
+        if(vida<=0)
+        {
+            anim.SetTrigger("Death");
+            Destroy(gameObject,2);
+        }
+    
+    }}
 }
