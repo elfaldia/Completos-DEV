@@ -96,15 +96,10 @@ public class subjefe : Fighter
        rb.velocity = new Vector2(vel.x * horizontalSpeed, vel.y * verticalSpeed);
 
     }
-<<<<<<< Updated upstream
      public void TomarDano(float dano)
     {
         vida-=dano;
-=======
-     public void TomarDaño(float daño)
-    {
-        vida-=daño;
->>>>>>> Stashed changes
+        
         if(vida<=0)
         {
             anim.SetTrigger("isMuerto");

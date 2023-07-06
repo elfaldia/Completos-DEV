@@ -44,7 +44,7 @@ public class playerMovement : Fighter
         }  
         
     }
-     public void TomarDaño(float daño) // scripts para tomar daño
+     public void TomarDano(float daño) // scripts para tomar daño
     {
         if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Defense")){  // se comprueba que el personaje no se encuentre bloqueando
       
