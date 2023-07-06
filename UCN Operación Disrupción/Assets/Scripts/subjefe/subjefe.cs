@@ -96,9 +96,14 @@ public class subjefe : Fighter
 
     }
      public void TomarDaño(float daño)
-    {
+    {   
         vida-=daño;
-        if(vida<=0)
+        if(vida>0)
+        {
+        anim.SetTrigger("getPunch");
+        }
+        
+        if(vida==0)
         {
             anim.SetTrigger("isMuerto");
             GetComponent<CapsuleCollider2D>().enabled=false;

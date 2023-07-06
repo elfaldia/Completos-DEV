@@ -22,7 +22,7 @@ public class finalboss : Fighter
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         InvokeRepeating("SetTarget", 0, 5);
-        InvokeRepeating("SendAttack", 0, AttackCoolDown); 
+        InvokeRepeating("SendAttack", 0, AttackCoolDown); //se designan los parametros para el rastreo y cd de ataque del jefe
     }
 
     void SendAttack()
@@ -51,13 +51,13 @@ public class finalboss : Fighter
     {
         if (state != States.patrol)
             return;
-        target = new Vector2(transform.position.x + Random.Range(-searchRange, searchRange), Random.Range(LimitsY.y, LimitsY.x));
+        target = new Vector2(transform.position.x + Random.Range(-searchRange, searchRange), Random.Range(LimitsY.y, LimitsY.x));//se da un rango para seguir al protagonista
     }
 
     Vector2 vel;
     void Update()
     {
-        if (state == States.pursuit)
+        if (state == States.pursuit)// se dan los parametros del modo patrulla y seguimiento respectivamente
         {
             target = player.transform.position;
             if (Vector3.Distance(target, transform.position) > searchRange * 1.2f)
@@ -95,10 +95,14 @@ public class finalboss : Fighter
        rb.velocity = new Vector2(vel.x * horizontalSpeed, vel.y * verticalSpeed);
 
     }
-     public void TomarDaño(float daño)
+     public void TomarDaño(float daño)// se establecen los parametros para tomar daño 
     {
         vida-=daño;
-        if(vida<=0)
+        if(vida>0)
+        {
+            anim.SetTrigger("getPunch");
+        }
+        if(vida==0)
         {
             anim.SetTrigger("isMuerto");
             GetComponent<CapsuleCollider2D>().enabled=false;

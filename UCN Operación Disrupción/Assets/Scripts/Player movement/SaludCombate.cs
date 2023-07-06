@@ -19,13 +19,13 @@ public class SaludCombate : MonoBehaviour
     {
         
     }
-    public void TomarDaño(float daño)
+    public void TomarDaño(float daño) // si la vida del jugador baja a 0 se inica la animacion de muerte
     {
         vida-=daño;
         BarraVida.vidaActual(vida);
         if(vida<=0)
         {
-            //player.GetComponent<Animator>().SetTrigger("Death");
+            player.GetComponent<Animator>().SetTrigger("Death");
             Destroy(gameObject);
         }
     
