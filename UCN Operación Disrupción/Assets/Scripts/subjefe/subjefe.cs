@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class subjefe : Fighter
 	{
@@ -97,15 +96,18 @@ public class subjefe : Fighter
 
     }
      public void TomarDano(float dano)
-    {
+    {   
         vida-=dano;
+        if(vida>0)
+        {
+        anim.SetTrigger("getPunch");
+        }
         
-        if(vida<=0)
+        if(vida==0)
         {
             anim.SetTrigger("isMuerto");
             GetComponent<CapsuleCollider2D>().enabled=false;
             Destroy(gameObject,5);
-            SceneManager.LoadScene(2);
         }
     }
 }
