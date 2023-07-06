@@ -19,9 +19,9 @@ public class SaludCombate : MonoBehaviour
     {
         
     }
-    public void TomarDaño(float daño) // si la vida del jugador baja a 0 se inica la animacion de muerte
+    public void TomarDano(float dano) // si la vida del jugador baja a 0 se inica la animacion de muerte
     {
-        vida-=daño;
+        vida-=dano;
         BarraVida.vidaActual(vida);
         if(vida<=0)
         {

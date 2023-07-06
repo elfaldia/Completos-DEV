@@ -247,11 +247,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-<<<<<<< HEAD:UCN Operación Disrupción/Assets/Images/Enemy/Enemy.prefab
+<<<<<<<< HEAD:UCN Operación Disrupción/Assets/Images/Enemy/Enemy.prefab
   m_Offset: {x: -0.14297709, y: -0.049737066}
-=======
+========
   m_Offset: {x: -0.20497012, y: 0.22346556}
->>>>>>> 3062312c62502c6c21e4a3cd94465628098234f5:UCN Operación Disrupción/Assets/prefabs/Enemy.prefab
+>>>>>>>> e5dbdca0adbbe66d74ee40e0fb569ccde1f29a39:UCN Operación Disrupción/Assets/prefabs/Enemy.prefab
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -262,9 +262,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-<<<<<<< HEAD:UCN Operación Disrupción/Assets/Images/Enemy/Enemy.prefab
+<<<<<<<< HEAD:UCN Operación Disrupción/Assets/Images/Enemy/Enemy.prefab
   m_Size: {x: 0.052270442, y: 0.08802837}
-=======
+========
   m_Size: {x: 1.1194615, y: 3.53005}
->>>>>>> 3062312c62502c6c21e4a3cd94465628098234f5:UCN Operación Disrupción/Assets/prefabs/Enemy.prefab
+>>>>>>>> e5dbdca0adbbe66d74ee40e0fb569ccde1f29a39:UCN Operación Disrupción/Assets/prefabs/Enemy.prefab
   m_EdgeRadius: 0
