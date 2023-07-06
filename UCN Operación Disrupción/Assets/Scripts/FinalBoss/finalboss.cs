@@ -99,6 +99,10 @@ public class finalboss : Fighter
      public void TomarDano(float dano)// se establecen los parametros para tomar dano 
     {
         vida-=dano;
+        if(vida>0)
+        {
+            anim.SetTrigger("getPunch");
+        }
         if(vida<=0)
         {
             anim.SetTrigger("isMuerto");
