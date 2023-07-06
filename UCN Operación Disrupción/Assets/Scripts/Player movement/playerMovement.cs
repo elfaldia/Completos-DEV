@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class playerMovement : Fighter
 {
     [SerializeField] private float vida;
@@ -57,7 +57,7 @@ public class playerMovement : Fighter
             
             anim.SetTrigger("Death"); //se inicia la animacion de muerte y se acaba el juego
             Destroy(gameObject,1.8f);
-
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     
         } 
