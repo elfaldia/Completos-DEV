@@ -96,15 +96,13 @@ public class Enemy : Fighter
         rb.velocity = new Vector2(vel.x * horizontalSpeed, vel.y * verticalSpeed);
 
     }
-     public void TomarDaño(float daño) // se usa el mismo sistema de vida que con el protagonista
+     public void TomarDaÃ±o(float daÃ±o) // se usa el mismo sistema de vida que con el protagonista
     {
-        vida-=daño;
+        vida-=daÃ±o;
         if(vida<=0)
         {
             anim.SetTrigger("Death");
             Destroy(gameObject,1.3f);
-          
-            //
         }
     }
 

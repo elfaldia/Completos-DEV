@@ -18,6 +18,7 @@ public class subjefe : Fighter
     Transform player;
     Vector3 target;
 
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -95,9 +96,9 @@ public class subjefe : Fighter
        rb.velocity = new Vector2(vel.x * horizontalSpeed, vel.y * verticalSpeed);
 
     }
-     public void TomarDaño(float daño)
+     public void TomarDaÃ±o(float daÃ±o)
     {
-        vida-=daño;
+        vida-=daÃ±o;
         if(vida<=0)
         {
             anim.SetTrigger("isMuerto");
