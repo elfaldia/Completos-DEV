@@ -95,9 +95,9 @@ public class finalboss : Fighter
        rb.velocity = new Vector2(vel.x * horizontalSpeed, vel.y * verticalSpeed);
 
     }
-     public void TomarDaño(float daño)// se establecen los parametros para tomar daño 
+     public void TomarDano(float dano)// se establecen los parametros para tomar dano 
     {
-        vida-=daño;
+        vida-=dano;
         if(vida<=0)
         {
             anim.SetTrigger("isMuerto");
