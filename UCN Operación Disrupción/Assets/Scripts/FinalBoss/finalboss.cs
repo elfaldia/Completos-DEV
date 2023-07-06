@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class finalboss : Fighter
 	{
@@ -22,7 +23,7 @@ public class finalboss : Fighter
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         InvokeRepeating("SetTarget", 0, 5);
-        InvokeRepeating("SendAttack", 0, AttackCoolDown); //se designan los parametros para el rastreo y cd de ataque del jefe
+        InvokeRepeating("SendAttack", 0, AttackCoolDown); 
     }
 
     void SendAttack()
@@ -51,13 +52,13 @@ public class finalboss : Fighter
     {
         if (state != States.patrol)
             return;
-        target = new Vector2(transform.position.x + Random.Range(-searchRange, searchRange), Random.Range(LimitsY.y, LimitsY.x));//se da un rango para seguir al protagonista
+        target = new Vector2(transform.position.x + Random.Range(-searchRange, searchRange), Random.Range(LimitsY.y, LimitsY.x));
     }
 
     Vector2 vel;
     void Update()
     {
-        if (state == States.pursuit)// se dan los parametros del modo patrulla y seguimiento respectivamente
+        if (state == States.pursuit)
         {
             target = player.transform.position;
             if (Vector3.Distance(target, transform.position) > searchRange * 1.2f)
@@ -95,18 +96,15 @@ public class finalboss : Fighter
        rb.velocity = new Vector2(vel.x * horizontalSpeed, vel.y * verticalSpeed);
 
     }
-     public void TomarDaÒo(float daÒo)// se establecen los parametros para tomar daÒo 
+     public void TomarDa√±o(float da√±o)
     {
-        vida-=daÒo;
-        if(vida>0)
-        {
-            anim.SetTrigger("getPunch");
-        }
-        if(vida==0)
+        vida-=da√±o;
+        if(vida<=0)
         {
             anim.SetTrigger("isMuerto");
             GetComponent<CapsuleCollider2D>().enabled=false;
             Destroy(gameObject,5);
+            SceneManager.LoadScene(6);
         }
     }
 }
