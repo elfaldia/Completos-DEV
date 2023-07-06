@@ -19,7 +19,7 @@ public class Enemy_Controller : MonoBehaviour
         minY = points.Min(point => point.position.y);
 
         for(int i = 0; i < Random.Range(5,10); i++) {
-                Invoke("SummonEnemy", 1f);
+                InvokeRepeating("SummonEnemy", 1f, 3f);
         }
     }
     // Update is called once per frame
