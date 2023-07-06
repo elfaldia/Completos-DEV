@@ -19,7 +19,7 @@ public class hitbox2 : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<playerMovement>().TomarDaÃ±o(20);
+            other.gameObject.GetComponent<playerMovement>().TomarDaño(20);
         }
     }
 }
