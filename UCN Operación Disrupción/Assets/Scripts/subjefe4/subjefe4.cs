@@ -92,9 +92,9 @@ public class subjefe4 : Fighter
        rb.velocity = new Vector2(vel.x * horizontalSpeed, vel.y * verticalSpeed);
 
     }
-     public void TomarDaño(float daño)
+     public void TomarDano(float dano)
     {
-        vida-=daño;
+        vida-=dano;
         if(vida>0)
         {
             anim.SetTrigger("getPunch");

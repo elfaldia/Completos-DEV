@@ -19,28 +19,28 @@ public class hitboxplayer : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Subjefe"))
         {
-            other.gameObject.GetComponent<subjefe>().TomarDaño(20);
+            other.gameObject.GetComponent<subjefe>().TomarDano(20);
             
         }
         else if(other.gameObject.CompareTag("Subjefe 2"))
         {
-        other.gameObject.GetComponent<subjefe2>().TomarDaño(20);
+        other.gameObject.GetComponent<subjefe2>().TomarDano(20);
         }
         else if(other.gameObject.CompareTag("Subjefe 3"))
         {
-            other.gameObject.GetComponent<subjefe3>().TomarDaño(20);
+            other.gameObject.GetComponent<subjefe3>().TomarDano(20);
         }
        else if(other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<Enemy>().TomarDaño(10);
+            other.gameObject.GetComponent<Enemy>().TomarDano(10);
         }
         else if(other.gameObject.CompareTag("Subjefe 4"))
         {
-            other.gameObject.GetComponent<subjefe4>().TomarDaño(20);
+            other.gameObject.GetComponent<subjefe4>().TomarDano(20);
         }
         else if(other.gameObject.CompareTag("Final Boss"))
         {
-            other.gameObject.GetComponent<finalboss>().TomarDaño(25);
+            other.gameObject.GetComponent<finalboss>().TomarDano(25);
         }
     }
 }

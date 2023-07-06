@@ -43,18 +43,18 @@ public class playerMovement : Fighter
         }  
         
     }
-     public void TomarDaño(float daño) // scripts para tomar daño
+     public void TomarDano(float dano) // scripts para tomar daño
     {
         if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Defense"))  // se comprueba que el personaje no se encuentre bloqueando
         { 
-         vida-=daño;                                                 //se resta el daño  a la vida del jugador
+         vida-=dano;                                                 //se resta el daño  a la vida del jugador
          BarraVida.vidaActual(vida);
         if(vida>0){ 
         anim.SetTrigger("getPunch");}
-       
-       
+
         if(vida==0) //se comprueba que la vida del jugador sea igual a 0
         {
+            
             anim.SetTrigger("Death"); //se inicia la animacion de muerte y se acaba el juego
             Destroy(gameObject,1.8f);
 

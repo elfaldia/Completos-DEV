@@ -81,7 +81,7 @@ public class finalboss : Fighter
             }
         }
         vel = target - transform.position;
-        sr.flipX = vel.x < 0;
+        sr.flipX = -vel.x < 0;
         if(vel.magnitude < stoppingDistance)
             vel =-Vector2.zero; 
         vel.Normalize();
@@ -96,15 +96,19 @@ public class finalboss : Fighter
        rb.velocity = new Vector2(vel.x * horizontalSpeed, vel.y * verticalSpeed);
 
     }
-     public void TomarDaño(float daño)
-    {
-        vida-=daño;
-        if(vida<=0)
+     public void TomarDano(float dano)
+    {   
+        vida-=dano;
+        if(vida>0)
+        {
+        anim.SetTrigger("getPunch");
+        }
+        
+        if(vida==0)
         {
             anim.SetTrigger("isMuerto");
             GetComponent<CapsuleCollider2D>().enabled=false;
             Destroy(gameObject,5);
-            SceneManager.LoadScene(6);
         }
     }
 }

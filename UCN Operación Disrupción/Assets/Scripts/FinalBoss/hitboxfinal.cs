@@ -19,7 +19,7 @@ public class hitboxfinal : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<playerMovement>().TomarDaño(20);
+            other.gameObject.GetComponent<playerMovement>().TomarDano(20);
         }
     }
 }
