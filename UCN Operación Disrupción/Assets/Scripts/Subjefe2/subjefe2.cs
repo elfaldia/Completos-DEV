@@ -90,10 +90,14 @@ public class subjefe2 : Fighter
         }
        rb.velocity = new Vector2(vel.x * horizontalSpeed, vel.y * verticalSpeed);
     }
-     public void TomarDaño(float daño)
+     public void TomarDano(float dano)
     {
-        vida-=daño;
-        if(vida<=0)
+        vida-=dano;
+        if(vida>0)
+        {
+            anim.SetTrigger("getPunch");
+        }
+        if(vida==0)
         {
             anim.SetTrigger("isMuerto");
             GetComponent<CapsuleCollider2D>().enabled=false;

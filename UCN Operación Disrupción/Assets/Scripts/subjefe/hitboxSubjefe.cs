@@ -19,11 +19,7 @@ public class hitboxSubjefe : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-<<<<<<< Updated upstream
             other.gameObject.GetComponent<playerMovement>().TomarDano(20);
-=======
-            other.gameObject.GetComponent<playerMovement>().TomarDaño(20);
->>>>>>> Stashed changes
         }
     }
 }

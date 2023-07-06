@@ -15,11 +15,11 @@ public class hitboxEnemy : MonoBehaviour
     {
         
     }
-     private void OnCollisionEnter2D(Collision2D other) // se designa el daño recibido al ser atacado
+     private void OnCollisionEnter2D(Collision2D other) // se designa el daÃ±o recibido al ser atacado
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<playerMovement>().TomarDaño(20);
+            other.gameObject.GetComponent<playerMovement>().TomarDano(20);
         }
     }
 }
