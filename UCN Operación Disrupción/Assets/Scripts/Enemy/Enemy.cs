@@ -21,9 +21,9 @@ public class Enemy : Fighter
     Vector3 target;
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        InvokeRepeating("SetTarget", 0, 5);
-        InvokeRepeating("SendAttack", 0, AttackCoolDown); 
+        player = GameObject.FindGameObjectWithTag("Player").transform; // se asigna el target para los enemigos
+        InvokeRepeating("SetTarget", 0, 5);   //se delimita el area en el que los enemigos nos detectan
+        InvokeRepeating("SendAttack", 0, AttackCoolDown); // se asigna un cooldown al ataque de los enemigos
     }
 
     void SendAttack()
@@ -36,7 +36,7 @@ public class Enemy : Fighter
         {
             return;
         }
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Death "))
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Death ")) //se confirma que el enemigo no este en mitad de otra animacion antes de atacar
         {
             anim.SetTrigger("SetAttack");
         }
@@ -52,7 +52,7 @@ public class Enemy : Fighter
     {
         if (state != States.patrol)
             return;
-        target = new Vector2(transform.position.x + Random.Range(-searchRange, searchRange), Random.Range(LimitsY.y, LimitsY.x));
+        target = new Vector2(transform.position.x + Random.Range(-searchRange, searchRange), Random.Range(LimitsY.y, LimitsY.x)); // se asigna el movimiento mientras se escucha en el modo patrulla
     }
 
     Vector2 vel;
@@ -61,7 +61,7 @@ public class Enemy : Fighter
         if (state == States.pursuit)
         {
             target = player.transform.position;
-            if (Vector3.Distance(target, transform.position) > searchRange * 1.2f)
+            if (Vector3.Distance(target, transform.position) > searchRange * 1.2f) // si es que el personaje no se encuentra en rango el enemigo vuelve a el estado de patrulla
             {
                 target = transform.position;
                 state = States.patrol;
@@ -70,7 +70,7 @@ public class Enemy : Fighter
         }
         else if (state == States.patrol)
         {
-            var ob = Physics2D.CircleCast(transform.position, searchRange, Vector2.up);
+            var ob = Physics2D.CircleCast(transform.position, searchRange, Vector2.up); // si es que el protagonista se encuentra en rango se inicia el modo patrulla
             if (ob.collider != null)
             {
                 if (ob.collider.CompareTag("Player"))
@@ -85,7 +85,7 @@ public class Enemy : Fighter
         if(vel.magnitude < stoppingDistance)
             vel = Vector2.zero; 
         vel.Normalize();
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Death "))
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Death ")) // se limita el movimiento del enemigo si este se encuentra atacando o muriendo
         {
             anim.SetBool("isWalking", vel.magnitude != 0);
         }
@@ -96,7 +96,7 @@ public class Enemy : Fighter
         rb.velocity = new Vector2(vel.x * horizontalSpeed, vel.y * verticalSpeed);
 
     }
-     public void TomarDaño(float daño)
+     public void TomarDaño(float daño) // se usa el mismo sistema de vida que con el protagonista
     {
         vida-=daño;
         if(vida<=0)

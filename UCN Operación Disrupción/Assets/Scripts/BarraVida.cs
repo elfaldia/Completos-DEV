@@ -12,7 +12,7 @@ public class BarraVida : MonoBehaviour
     }
 
   
-    public void maxVida(float vidaMaxima)
+    public void maxVida(float vidaMaxima)//Se inicializan las variables designadas para la creacion del sistema de vida y su barra de vida respectiva
     {
         slider.maxValue=vidaMaxima;
     }
