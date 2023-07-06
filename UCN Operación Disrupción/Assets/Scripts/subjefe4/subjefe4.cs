@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class subjefe4 : Fighter
 {
@@ -100,6 +101,7 @@ public class subjefe4 : Fighter
             anim.SetTrigger("isMuerto");
             GetComponent<CapsuleCollider2D>().enabled=false;
             Destroy(gameObject,2.1f);
+            SceneManager.LoadScene(5);
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class finalboss : Fighter
 	{
@@ -103,6 +104,7 @@ public class finalboss : Fighter
             anim.SetTrigger("isMuerto");
             GetComponent<CapsuleCollider2D>().enabled=false;
             Destroy(gameObject,5);
+            SceneManager.LoadScene(7);
         }
     }
 }

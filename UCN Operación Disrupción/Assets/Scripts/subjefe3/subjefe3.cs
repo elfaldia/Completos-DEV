@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class subjefe3 : Fighter
 {
@@ -99,6 +100,7 @@ enum States { patrol, pursuit }
             anim.SetTrigger("isMuerto");
             GetComponent<CapsuleCollider2D>().enabled=false;
             Destroy(gameObject,2.1f);
+            SceneManager.LoadScene(4);
         }
     }
 }
