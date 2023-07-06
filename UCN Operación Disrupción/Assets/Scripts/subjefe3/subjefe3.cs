@@ -104,7 +104,7 @@ enum States { patrol, pursuit }
             anim.SetTrigger("isMuerto");
             GetComponent<CapsuleCollider2D>().enabled=false;
             Destroy(gameObject,2.1f);
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(1);
         }
     }
 }
