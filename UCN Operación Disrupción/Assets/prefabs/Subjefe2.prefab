@@ -249,4 +249,4 @@ MonoBehaviour:
   searchRange: 10
   stoppingDistance: 3
   AttackCoolDown: 2
-  vida: 100
+  vida: 150

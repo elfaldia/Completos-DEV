@@ -166,7 +166,7 @@ MonoBehaviour:
   searchRange: 10
   stoppingDistance: 3
   AttackCoolDown: 2
-  vida: 100
+  vida: 150
 --- !u!114 &3057801139957685467
 MonoBehaviour:
   m_ObjectHideFlags: 0

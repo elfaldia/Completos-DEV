@@ -23,7 +23,7 @@ public class Enemy_Controller : MonoBehaviour
         minYBoss = pointsBoss.Min(point => point.position.y);
         minXBoss = pointsBoss.Min(point => point.position.x);
 
-        for(int i = 0; i < Random.Range(3,7); i++) {
+        for(int i = 0; i < Random.Range(3,5); i++) {
                 Invoke("SummonEnemy", 0);
         }
 
