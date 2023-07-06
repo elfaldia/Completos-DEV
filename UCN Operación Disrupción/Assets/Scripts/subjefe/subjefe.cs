@@ -109,7 +109,7 @@ public class subjefe : Fighter
             anim.SetTrigger("isMuerto");
             GetComponent<CapsuleCollider2D>().enabled=false;
             Destroy(gameObject,5);
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
     }
 }
