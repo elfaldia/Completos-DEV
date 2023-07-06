@@ -5,22 +5,19 @@ using UnityEngine;
 public class playerMovement : Fighter
 {
     [SerializeField] private float vida;
-   [SerializeField] private float vidaMaxima;
-   [SerializeField]private BarraVida BarraVida;
+    [SerializeField] private float vidaMaxima;
+    [SerializeField]private BarraVida BarraVida;
 
     Vector2 cntrl;
     void Start()
     {
-      vida=vidaMaxima;
+        vida=vidaMaxima;
         BarraVida.inicioBarra(vida);
     }
 
     void Update()
     {
         cntrl = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
-
-
-
 
         if(cntrl.x != 0){
             sr.flipX = cntrl.x < 0;
@@ -42,19 +39,14 @@ public class playerMovement : Fighter
         else
         {
             rb.velocity = Vector3.zero;
-        }
-      
-
+        }  
         
-        
-
-
     }
-     public void TomarDaño(float daño)
+     public void TomarDaÃ±o(float daÃ±o)
     {
         if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Defense")){
       
-        vida-=daño;
+        vida-=daÃ±o;
         //anim.setTrigger("getPunch");
         BarraVida.vidaActual(vida);
         if(vida==0)

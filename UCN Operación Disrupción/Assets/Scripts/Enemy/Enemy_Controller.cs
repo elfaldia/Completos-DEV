@@ -27,18 +27,18 @@ public class Enemy_Controller : MonoBehaviour
     void Update()
     {
         nextTime += Time.deltaTime;
-
-        if(nextTime >= time)
-        {
-            nextTime = 0;
-            SummonEnemy();
+        for(int i = 0; i < Random.Range(5,10); i++) {    
+            if(nextTime >= time)
+            {
+                nextTime = 0;
+                SummonEnemy();
+            }
         }
     }
     void SummonEnemy()
     {
-        int enemy = Random.Range(0, 6);
         Vector2 randomPosition = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
 
-        Instantiate(enemies[enemy], randomPosition, Quaternion.identity);
+        Instantiate(enemies[0], randomPosition, Quaternion.identity);
     }
 }
