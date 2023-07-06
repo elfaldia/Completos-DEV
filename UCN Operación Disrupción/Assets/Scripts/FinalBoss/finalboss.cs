@@ -61,7 +61,7 @@ public class finalboss : Fighter
         if (state == States.pursuit)// se dan los parametros del modo patrulla y seguimiento respectivamente
         {
             target = player.transform.position;
-            if (Vector3.Distance(target, transform.position) > searchRange * 1.2f)
+            if (Vector3.Distance(target, transform.position) < searchRange * 1.2f)
             {
                 target = transform.position;
                 state = States.patrol;
