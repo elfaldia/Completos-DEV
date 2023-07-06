@@ -10,7 +10,7 @@ public class Fighter : MonoBehaviour
 {
     // min -7.57
     // max -1.42
-    protected static Vector2 LimitsY = new Vector2(-1.42f, -7.57f); 
+    protected static Vector2 LimitsY = new Vector2(-1.42f, -7.57f); //se limita el movimiento del jugador y el enemigo
 
     [SerializeField]
     protected float verticalSpeed;
