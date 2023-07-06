@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:UCN Operación Disrupción/Assets/Animation/finalboss/damage.anim.meta
+guid: 0e1b77ba9d7140447af75c840f2bd244
+NativeFormatImporter:
+========
 guid: e5ec2580f1cb2004b85f817a722f6fe8
 PrefabImporter:
+>>>>>>>> e77fce595e9bfbc4bc66e55269f4576c00162666:UCN Operación Disrupción/Assets/Scripts/FinalBoss/FinalBoss.prefab.meta
   externalObjects: {}
+  mainObjectFileID: 7400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

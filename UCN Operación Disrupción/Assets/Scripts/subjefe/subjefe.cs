@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
 
 public class subjefe : Fighter
 	{
@@ -19,7 +18,6 @@ public class subjefe : Fighter
     Transform player;
     Vector3 target;
 
-    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -97,15 +95,19 @@ public class subjefe : Fighter
        rb.velocity = new Vector2(vel.x * horizontalSpeed, vel.y * verticalSpeed);
 
     }
-     public void TomarDa√±o(float da√±o)
-    {
-        vida-=da√±o;
-        if(vida<=0)
+     public void TomarDaÒo(float daÒo)
+    {   
+        vida-=daÒo;
+        if(vida>0)
+        {
+        anim.SetTrigger("getPunch");
+        }
+        
+        if(vida==0)
         {
             anim.SetTrigger("isMuerto");
             GetComponent<CapsuleCollider2D>().enabled=false;
             Destroy(gameObject,5);
-            SceneManager.LoadScene(2);
         }
     }
 }

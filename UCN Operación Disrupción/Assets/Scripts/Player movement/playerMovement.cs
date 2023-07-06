@@ -7,7 +7,6 @@ public class playerMovement : Fighter
     [SerializeField] private float vida;
     [SerializeField] private float vidaMaxima;
     [SerializeField]private BarraVida BarraVida;
-
     Vector2 cntrl;
     void Start()
     {
@@ -46,16 +45,22 @@ public class playerMovement : Fighter
     }
      public void TomarDaño(float daño) // scripts para tomar daño
     {
-        if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Defense")){  // se comprueba que el personaje no se encuentre bloqueando
-      
-        vida-=daño;                                                 //se resta el daño  a la vida del jugador
-        //anim.setTrigger("getPunch");
-        BarraVida.vidaActual(vida);
+        if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Defense"))  // se comprueba que el personaje no se encuentre bloqueando
+        { 
+         vida-=daño;                                                 //se resta el daño  a la vida del jugador
+         BarraVida.vidaActual(vida);
+        if(vida>0){ 
+        anim.SetTrigger("getPunch");}
+       
+       
         if(vida==0) //se comprueba que la vida del jugador sea igual a 0
         {
             anim.SetTrigger("Death"); //se inicia la animacion de muerte y se acaba el juego
             Destroy(gameObject,1.8f);
+
         }
     
-    }}
+        } 
+    }
+   
 }
