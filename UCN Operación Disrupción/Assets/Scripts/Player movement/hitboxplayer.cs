@@ -32,7 +32,7 @@ public class hitboxplayer : MonoBehaviour
         }
        else if(other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<Enemy>().TomarDano(10);
+            other.gameObject.GetComponent<Enemy>().TomarDano(5);
         }
         else if(other.gameObject.CompareTag("Subjefe 4"))
         {
