@@ -976,7 +976,7 @@ MonoBehaviour:
   - {fileID: 1359920515}
   - {fileID: 792359885}
   enemies:
-  - {fileID: 1481743083060673063, guid: 1e995b9212d2a7e4983d3c8381b0b63a, type: 3}
+  - {fileID: 7594716602845611728, guid: fa7a2ccd5b331b14697567929aab480c, type: 3}
   - {fileID: 6411900781272839781, guid: e85cc48bff93e144caa49511fb651227, type: 3}
 --- !u!4 &875422306
 Transform:
