@@ -27,7 +27,7 @@ public class Enemy_Controller : MonoBehaviour
         }
 
         Invoke("SummonBoss", 30f);
-    }
+    }   
     // Update is called once per frame
     void Update()
     {

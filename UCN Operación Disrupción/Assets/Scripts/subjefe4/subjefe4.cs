@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class subjefe4 : Fighter
 {
@@ -92,14 +93,15 @@ public class subjefe4 : Fighter
        rb.velocity = new Vector2(vel.x * horizontalSpeed, vel.y * verticalSpeed);
 
     }
-     public void TomarDaño(float daño)
+     public void TomarDaÃ±o(float daÃ±o)
     {
-        vida-=daño;
+        vida-=daÃ±o;
         if(vida<=0)
         {
             anim.SetTrigger("isMuerto");
             GetComponent<CapsuleCollider2D>().enabled=false;
             Destroy(gameObject,2.1f);
+            SceneManager.LoadScene(5);
         }
     }
 }
