@@ -23,15 +23,17 @@ public class playerMovement : Fighter
             sr.flipX = cntrl.x < 0;
         }
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z))  // se asignan el control de ataque
         {
-            anim.SetTrigger("sendPunch");
+            anim.SetTrigger("sendPunch"); 
         }
-        anim.SetBool("isDefense", Input.GetKey(KeyCode.X));
+        anim.SetBool("isDefense", Input.GetKey(KeyCode.X));// se asigna el control de defensa 
+
+
         if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Punch")&& !anim.GetCurrentAnimatorStateInfo(0).IsName("GetPunch")
-            && !anim.GetCurrentAnimatorStateInfo(0).IsName("Defense"))
+            && !anim.GetCurrentAnimatorStateInfo(0).IsName("Defense")) // se comprueba que otra animacion no este siendo ejecutada
         {
-        anim.SetBool("isWalking", cntrl.magnitude != 0);
+        anim.SetBool("isWalking", cntrl.magnitude != 0); // se asigna los controles y limites para el movimiento
         rb.velocity = new Vector2(cntrl.x*horizontalSpeed, cntrl.y * verticalSpeed);
 
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, LimitsY.y,LimitsY.x),transform.position.z);
@@ -42,16 +44,16 @@ public class playerMovement : Fighter
         }  
         
     }
-     public void TomarDaño(float daño)
+     public void TomarDaño(float daño) // scripts para tomar daño
     {
-        if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Defense")){
+        if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Defense")){  // se comprueba que el personaje no se encuentre bloqueando
       
-        vida-=daño;
+        vida-=daño;                                                 //se resta el daño  a la vida del jugador
         //anim.setTrigger("getPunch");
         BarraVida.vidaActual(vida);
-        if(vida==0)
+        if(vida==0) //se comprueba que la vida del jugador sea igual a 0
         {
-            anim.SetTrigger("Death");
+            anim.SetTrigger("Death"); //se inicia la animacion de muerte y se acaba el juego
             Destroy(gameObject,1.8f);
         }
     

@@ -15,7 +15,7 @@ public class hitboxplayer : MonoBehaviour
     {
         
     }
-     private void OnCollisionEnter2D(Collision2D other)
+     private void OnCollisionEnter2D(Collision2D other) //se asigna el daño de cada enemigo
     {
         if(other.gameObject.CompareTag("Subjefe"))
         {
