@@ -600,8 +600,8 @@ MonoBehaviour:
   - {fileID: 1685558552}
   - {fileID: 1063817823}
   enemies:
-  - {fileID: 1481743083060673063, guid: 1e995b9212d2a7e4983d3c8381b0b63a, type: 3}
-  - {fileID: 1481743083060673063, guid: 1e995b9212d2a7e4983d3c8381b0b63a, type: 3}
+  - {fileID: 7594716602845611728, guid: fa7a2ccd5b331b14697567929aab480c, type: 3}
+  - {fileID: 7594716602845611728, guid: fa7a2ccd5b331b14697567929aab480c, type: 3}
 --- !u!4 &880290010
 Transform:
   m_ObjectHideFlags: 0
