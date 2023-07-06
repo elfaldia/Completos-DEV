@@ -32,7 +32,7 @@ public class hitboxplayer : MonoBehaviour
         }
        else if(other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<Enemy>().TomarDaño(20);
+            other.gameObject.GetComponent<Enemy>().TomarDaño(10);
         }
         else if(other.gameObject.CompareTag("Subjefe 4"))
         {
@@ -40,7 +40,7 @@ public class hitboxplayer : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("Final Boss"))
         {
-            other.gameObject.GetComponent<finalboss>().TomarDaño(10);
+            other.gameObject.GetComponent<finalboss>().TomarDaño(25);
         }
     }
 }
