@@ -148,7 +148,7 @@ MonoBehaviour:
   searchRange: 10
   stoppingDistance: 3
   AttackCoolDown: 2
-  vida: 200
+  vida: 100
 --- !u!212 &6411900781272839770
 SpriteRenderer:
   m_ObjectHideFlags: 0

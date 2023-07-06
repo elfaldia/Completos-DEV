@@ -234,10 +234,10 @@ MonoBehaviour:
   verticalSpeed: 1
   horizontalSpeed: 5
   state: 0
-  searchRange: 10
+  searchRange: 15
   stoppingDistance: 3
   AttackCoolDown: 2
-  vida: 200
+  vida: 300
 --- !u!114 &8509719837526976875
 MonoBehaviour:
   m_ObjectHideFlags: 0
